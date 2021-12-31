@@ -1,6 +1,6 @@
 {
   "name": "event-binder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An event binder utility for event binding and unbinding easier",
   "author": "TY <towyuan@outlook.com>",
   "license": "MIT",
@@ -28,8 +28,7 @@
     "jest": "jest",
     "posttest": "npm run lint"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@nutol/build": "^0.2.1",
     "@nutol/eslint-config": "^0.2.0",
