@@ -1,9 +1,9 @@
-import {EventAware, EventListener, EventNames, UnbindFn} from './types';
+import {EventAware, EventAwareListener, EventAwareEventNames, UnbindFn} from './types';
 
-export function bind<T extends EventAware, E extends EventNames<T>>(
+export function bind<T extends EventAware, E extends EventAwareEventNames<T>>(
   target: T,
   event: E,
-  listener: EventListener<T, E>,
+  listener: EventAwareListener<T, E>,
 ): UnbindFn {
   target.on(event, listener);
 

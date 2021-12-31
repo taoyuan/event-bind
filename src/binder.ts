@@ -1,5 +1,5 @@
 import {bind} from './bind';
-import {EventAware, EventListener, EventNames, UnbindFn} from './types';
+import {EventAware, EventAwareListener, EventAwareEventNames, UnbindFn} from './types';
 
 export interface Binding {
   [event: string | symbol]: UnbindFn[];
@@ -18,7 +18,7 @@ export class Binder<T extends EventAware> {
     return this.create(target);
   }
 
-  bind<E extends EventNames<T>>(event: E, listener: EventListener<T, E>): this {
+  bind<E extends EventAwareEventNames<T>>(event: E, listener: EventAwareListener<T, E>): this {
     const unbinds = (this.bindings[event] = this.bindings[event] ?? []);
     unbinds.push(bind(this.target, event, listener));
     return this;

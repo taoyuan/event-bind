@@ -64,11 +64,12 @@ export type TupleToObject<T extends [string, any]> = {
 export type EventListenerAddingFn = (eventName: string, listener: (...args: any[]) => void) => any;
 // get event map {[event]: listener, ...}
 export type EventMap<F extends EventListenerAddingFn> = TupleToObject<OverloadedParameters<F>>;
+
 // get event names from event map
-export type EventNames<T extends EventAware, F extends keyof EventAware = 'on'> = keyof EventMap<T[F]>;
+export type EventAwareEventNames<T extends EventAware, F extends keyof EventAware = 'on'> = keyof EventMap<T[F]>;
 // get event listener according to event name
-export type EventListener<
+export type EventAwareListener<
   T extends EventAware,
-  E extends EventNames<T, F>,
+  E extends EventAwareEventNames<T, F>,
   F extends keyof EventAware = 'on',
 > = EventMap<T[F]>[E];
