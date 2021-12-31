@@ -4,7 +4,7 @@
 
 ## Usage
 
-Sample event emitter
+`socket.ts`
 
 ```ts
 // socket.ts
@@ -21,7 +21,7 @@ export class Socket extends EventEmitter {
 }
 ```
 
-### `bind` for binding one listener
+### `bind` one listener
 
 ```ts
 import {bind} from 'event-bind';
@@ -35,7 +35,7 @@ const unbind = bind(socket, 'data', data => {});
 unbind();
 ```
 
-### `Binder` for binding multiple listeners
+### `Binder` for multiple listeners
 
 ```ts
 import {Binder} from 'event-bind';
@@ -48,5 +48,9 @@ const binder = Binder.for(socket)
   .bind('close', () => {});
 
 // after all done
+// unbind all
 binder.unbind();
+
+// unbind exact properties
+binder.unbind('data', 'close');
 ```
