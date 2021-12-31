@@ -1,6 +1,6 @@
 {
   "name": "event-bind",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An event binder utility for event binding and unbinding easier",
   "author": "TY <towyuan@outlook.com>",
   "license": "MIT",
