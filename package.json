@@ -1,5 +1,5 @@
 {
-  "name": "event-binder",
+  "name": "event-bind",
   "version": "0.1.1",
   "description": "An event binder utility for event binding and unbinding easier",
   "author": "TY <towyuan@outlook.com>",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@nutol/build": "^0.2.1",
     "@nutol/eslint-config": "^0.2.0",
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^27.4.0",
     "@types/micromatch": "^4.0.2",
     "@types/node": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "^5.8.1",

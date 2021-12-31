@@ -1,4 +1,4 @@
-# event-binder
+# event-bind
 
 > An event binder utility for event binding and unbinding easier
 
@@ -9,7 +9,7 @@ Sample event emitter
 ```ts
 // socket.ts
 
-import {AnyFunction} from 'event-binder';
+import {AnyFunction} from 'event-bind';
 
 // A event aware class
 export class Socket extends EventEmitter {
@@ -24,7 +24,7 @@ export class Socket extends EventEmitter {
 ### `bind` for binding one listener
 
 ```ts
-import {bind} from 'event-binder';
+import {bind} from 'event-bind';
 
 // any event emitter
 const socket = new Socket();
@@ -38,7 +38,7 @@ unbind();
 ### `Binder` for binding multiple listeners
 
 ```ts
-import {Binder} from 'event-binder';
+import {Binder} from 'event-bind';
 
 // any event emitter
 const socket = new Socket();
