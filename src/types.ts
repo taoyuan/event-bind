@@ -72,4 +72,4 @@ export type EventAwareListener<
   T extends EventAware,
   E extends EventAwareEventNames<T, F>,
   F extends keyof EventAware = 'on',
-> = EventMap<T[F]>[E];
+> = EventMap<T[F]>[E] extends never ? AnyFunction : EventMap<T[F]>[E];

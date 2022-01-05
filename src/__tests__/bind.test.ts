@@ -1,3 +1,4 @@
+import EventEmitter from 'events';
 import {bind} from '../bind';
 import {Socket} from './mocks/socket';
 
@@ -22,5 +23,13 @@ describe('bind', function () {
     unbind();
     socket.emit('data', 'Hello World');
     expect(onData).not.toHaveBeenCalled();
+  });
+
+  it('should bind a listener on EventEmitter without typed event(s)', function () {
+    const emitter = new EventEmitter();
+    const onData = jest.fn();
+    bind(emitter, 'data', onData);
+    emitter.emit('data', 'Hello World');
+    expect(onData).toHaveBeenCalledTimes(1);
   });
 });
